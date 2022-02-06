@@ -1,0 +1,44 @@
+﻿@model ConvertJson_DistantPoint.Models.Jsonfile
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class=" col form-label">
+            <form enctype="multipart/form-data" method="post">
+                <dl>
+                    <dt>
+                        <label asp-for="FileJ"><span>Update Only JSON File</span></label>
+                    </dt>
+                    <dd>
+                        <input name="file" type="file">
+                        <span asp-validation-for="FileJ"></span>
+                    </dd>
+                </dl>
+                <input asp-controller="Home" asp-action="index" class="btn btn1 rounded-0 border pl-5 pr-5 border-primary py-3 my-1" type="submit" value="Upload" placeholder="UPDATE" />
+            </form>
+        </div>
+        <div class="col">
+
+        </div>
+        <br />
+        <br />
+        <br />
+        @{
+            if (Model.Content != null && Model.Content.Length > 0)
+            {
+                <div>
+                    <p>@Model.Content</p>
+                </div>
+
+            }
+        }
+    </div>
+
+</div>
